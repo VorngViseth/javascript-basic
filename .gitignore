@@ -1,0 +1,26 @@
+# --- System files ---
+.DS_Store
+Thumbs.db
+
+# --- Editor settings ---
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# --- Logs ---
+*.log
+
+# --- Build/compiled output (for future use) ---
+dist/
+build/
+*.map
+*.min.js
+*.bundle.js
+
+# --- Optional image editing files ---
+*.psd
+*.xcf
+*.bak
+*.tmp

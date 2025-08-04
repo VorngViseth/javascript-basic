@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Light/Dark Mode</title>  
+    </head>
+    <body id="body" class="light">
+        <nav class="box">
+            <h1 id="paragraph">light mode</h1>
+            <button onclick="changeText('light')">Light Mode</button>
+            <button onclick="changeText('dark')">Dark Mode</button>
+        </nav>
+
+        <!-- switching the color of the box -->
+        <nav class="boxColor blue" id="boxColor">
+            <button onclick="changeBoxColor('blue')">blue</button>
+            <button onclick="changeBoxColor('red')">red</button>
+            <button onclick="changeBoxColor('green')">green</button>
+        </nav>
+
+        <!-- increment and decrement -->
+        <div class="box">
+            <p id="number">0</p>
+            <button onclick="changeNum(-1)" >-1</button>
+            <button onclick="changeNum(+1)" >+1</button>
+        </div>
+
+        <!-- even or odd -->
+        <div class="box">
+            <label for="guess" >Number : </label>
+            <input type="number" id="guess">
+            <button onclick="checkNum()">Check Number</button>
+            <p id="result">result : please input number</p>
+        </div>
+
+        <!-- todo list -->
+        <div class="box">
+            <h2>Todo List</h2>
+            <label for="item">Add todo : </label>
+            <input type="text" id="item">
+            <button onclick="addTodo()">Add</button>
+            <ul id="todoItems" class="list"></ul>
+        </div>
+
+        <!-- favorite movies list -->
+         <div class="movieList box">
+            <h2>Favorite-Movies</h2>
+            <ul id="movieList" class="favoriteMovie"></ul>
+         </div>
+
+        <!-- random quotes -->
+         <diV class="box quote">
+            <h2>random quote for today</h2>
+            <button id="quoteBtn">click here to get quote</button>
+            <p id="quote">!!!quote!!!</p>
+         </diV>
+
+        <script src="script.js"></script>
+    </body>
+</html>
