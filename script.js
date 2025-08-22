@@ -92,3 +92,52 @@ function randomquote(){
     let num = Math.floor(Math.random() * quotes.length);
     qoute.textContent = quotes[num];
 }
+
+// stop watch
+let [miliseconds, seconds, minutes, hours] = [0, 0, 0, 0,];
+let time = document.getElementById("time");
+let timmer = null;
+
+function stopWatch() {
+    miliseconds++;
+    if(miliseconds == 10) {
+        seconds++;
+        miliseconds = 0;
+        if(seconds == 60) {
+            minutes++;
+            seconds = 0;
+            if(minutes == 60) {
+                hours++;
+                minutes = 0;
+            }
+        }
+    }
+
+    let h = hours < 10 ? "0"+hours : hours;
+    let m = minutes < 10 ? "0"+minutes : minutes;
+    let s = seconds < 10 ? "0"+seconds : seconds;
+    let mil = miliseconds < 10 ? "0"+miliseconds : miliseconds;
+
+    time.innerHTML = h + ":" + m + ":" + s + "." + mil;
+}
+
+function startStopWatch() {
+    if(timmer != null) {
+        clearInterval(timmer);    
+    }
+
+    timmer = setInterval(stopWatch, 100);
+
+}
+
+function pauseStopWatch() {
+    clearInterval(timmer);
+    timmer = null;
+}
+
+function replayStopWatch() {
+    clearInterval(timmer);
+    [miliseconds, seconds, minutes, hours] = [0, 0, 0, 0,];
+    timmer = null;
+    time.innerHTML = "00:00:00.00";
+}
