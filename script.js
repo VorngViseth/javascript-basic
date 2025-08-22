@@ -19,14 +19,8 @@ function checkNum() {
     let number = document.getElementById('guess');
     let currentNum = parseInt(number.value);
     let answer = document.getElementById('result');
-    
-    if(isNaN(currentNum)){  
-        answer.textContent = 'result : please inter a valid number'
-    }else if(currentNum % 2 === 0) {
-        answer.textContent = 'result : even';
-    }else{
-        answer.textContent = 'result : odd';
-    }
+
+    answer.textContent = isNaN(currentNum) ? 'invalid number' : (currentNum % 2 == 0) ? 'even' : 'odd';
 }
 
 function addTodo(){
